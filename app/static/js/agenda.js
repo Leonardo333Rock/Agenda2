@@ -37,7 +37,5 @@ const selecionarAba=(el,url)=>{
     })
     el.classList.add('abaSelecionada')
     window.open(url,'if_principal')
-    if_principal.removeAttribute('src')
-    if_principal.setAttribute('src',url)
 
 }
