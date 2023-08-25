@@ -9,9 +9,11 @@ def Agenda(request):
 @csrf_exempt
 def Contato_salvo(request):
     contato = Contato()
-    nome = request.POST.get('f_nome')
-    celular = request.POST.get('f_celular')
-    email = request.POST.get('f_email')
-    dtnasc = request.POST.get('f_dtnasc')
+    contato.nome = request.POST.get('f_nome')
+    contato.celular = request.POST.get('f_celular')
+    contato.email = request.POST.get('f_email')
+    contato.dtnasc = request.POST.get('f_dtnasc')
+    contato.save()
 
     return redirect('/')
+ 
