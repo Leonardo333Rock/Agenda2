@@ -29,6 +29,4 @@ def Contato_salvo(request):
     contato.email = request.POST.get('f_email')
     contato.dtnasc = request.POST.get('f_dtnasc')
     contato.save()
-
     return redirect('/novo')
- 
