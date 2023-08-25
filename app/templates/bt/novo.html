@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo</title>
-    <link rel="stylesheet" href="../css/style1.css">
-</head>
-<body class="novo">
-    <form action="/contato_salvo" method="POST" class="elementosForm">
+{% extends 'agenda.html' %}
+{% load static %}
+
+
+{% block content %}
+<div id="principal" class="principal">
+    <!-- <iframe src="{% static 'html/home.html' %}" id="if_principal" class="if_principal" name="if_principal"></iframe> -->
+    <form action="{% url 'contato_salvo' %}" method="POST" class="elementosForm">
+        {% csrf_token %}
         <div class="campoForm">
             <label for="f_nome">Nome</label>
             <input type="text" id="f_nome" name="f_nome">
@@ -25,9 +24,9 @@
             <input type="text" id="f_dtnasc" name="f_dtnasc">
         </div>
         <div class="botoesForm">
-            <input type="submit" class="btnGeral" value="Gravar">
+            <input type="submit" id="btnGeral" class="btnGeral" value="Gravar">
         </div>
     </form>
-
-</body>
-</html>
+</div>
+    <script src="{% static 'js/novo.js' %}"></script>
+{% endblock %}

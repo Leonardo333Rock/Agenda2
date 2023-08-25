@@ -6,7 +6,22 @@ from . models import Contato
 def Agenda(request):
     return render(request,'agenda.html')
 
-@csrf_exempt
+
+def Novo(request):
+    return render(request,'bt/novo.html',{'class':'abaSelecionada'})
+
+def Home(request):
+    return render(request,'bt/home.html')
+
+def Pesquisar(request):
+    return render(request,'bt/pesquisar.html')
+
+def Gestao(request):
+    return render(request,'bt/gestao.html')
+
+def Sobre(request):
+    return render(request,'bt/sobre.html')
+
 def Contato_salvo(request):
     contato = Contato()
     contato.nome = request.POST.get('f_nome')
@@ -15,5 +30,5 @@ def Contato_salvo(request):
     contato.dtnasc = request.POST.get('f_dtnasc')
     contato.save()
 
-    return redirect('/')
+    return redirect('/novo')
  

@@ -9,33 +9,33 @@ const principal = document.querySelector("#principal")
 const if_principal = document.querySelector('if_principal')
 
 btn_home.addEventListener('click',(evt)=>{
-    selecionarAba(evt.target,'static/html/home.html')
+    selecionarAba(evt.target)
 })
 
 btn_novo.addEventListener('click',(evt)=>{
-    selecionarAba(evt.target,'static/html/novo.html')
+    selecionarAba(evt.target)
 })
 
 btn_pesquisar.addEventListener('click',(evt)=>{
-    selecionarAba(evt.target,'static/html/pesquisar.html')
+    selecionarAba(evt.target)
 
 })
 
 btn_gestao.addEventListener('click',(evt)=>{
-    selecionarAba(evt.target,'static/html/gestao.html')
+    selecionarAba(evt.target)
 })
 
 btn_sobre.addEventListener('click',(evt)=>{
-    selecionarAba(evt.target,'static/html/sobre.html')
+    selecionarAba(evt.target)
 })
 
 
-const selecionarAba=(el,url)=>{
+const selecionarAba=(el)=>{
     const abas = [...document.querySelectorAll('.aba')]
     abas.map(e=>{
         e.classList.remove('abaSelecionada')
     })
+    alert(el.innerHTML)
     el.classList.add('abaSelecionada')
-    window.open(url,'if_principal')
 
 }
